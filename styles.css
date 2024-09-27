@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+  max-width: 700px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.button-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.bg-blue {
+  background-color: #4f46e5;
+}
+
+.bg-green {
+  background-color: #22c55e;
+}
+
+.bg-purple {
+  background-color: #8b5cf6;
+}
+
+.dialog-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.4s ease-out;
+}
+
+.dialog h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.75rem;
+  color: #333;
+}
+
+.dialog input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.dialog label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+} /* Estilos generales para los botones dentro de .dialog */
+.dialog button:not(.close-button) {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4f46e5; /* Color azul */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efectos hover y clic para los botones dentro de .dialog */
+.dialog button:not(.close-button):hover {
+  background-color: #4f46e5;
+  transform: scale(1.05);
+}
+
+.dialog button:not(.close-button):active {
+  transform: scale(0.95);
+}
+
+/* Botón de cerrar (X) */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 48px; /* Tamaño fijo pequeño */
+  height: 30px; /* Tamaño fijo pequeño */
+  padding: 0; /* Sin padding adicional */
+  border: none;
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #4f46e5; /* Color azul */
+  color: white;
+  font-size: 1rem; /* Tamaño de fuente consistente con otros botones */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover para el botón de cerrar */
+.close-button:hover {
+  background-color: #4f46e5; /* Color de fondo al pasar el mouse */
+  transform: scale(1.05); /* Efecto de escalado al pasar el mouse */
+}
+
+.close-button:active {
+  transform: scale(0.95); /* Efecto de escalado al hacer clic */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
